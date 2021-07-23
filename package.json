@@ -1,0 +1,23 @@
+{
+  "name": "anydoor",
+  "version": "1.0.0",
+  "description": "NodeJs Static WebServer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangM00A/anydoor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yangM00A/anydoor/issues"
+  },
+  "homepage": "https://github.com/yangM00A/anydoor#readme",
+  "devDependencies": {
+    "chalk": "^4.1.1"
+  }
+}
