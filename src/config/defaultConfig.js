@@ -1,5 +1,5 @@
 module.exports = {
-    port: 3000,
+    port: 4000,
     host: 'localhost',
     root:process.cwd()
 }

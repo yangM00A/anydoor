@@ -1,24 +1,19 @@
 const http = require('http')
 const chalk = require('chalk')
 const path = require('path')
-const fs = require('fs')
+const handlebars = require('handlebars')
 const conf = require('./src/config/defaultConfig')
-const { readFile } = require('./src/utils/utils')
+const router = require('./src/utils/handleRouter')
+const fs = require('fs')
+
+const sourceHtml = fs.readFileSync(path.join(conf.root,'./src/template/dir.tpl'))
+console.log(sourceHtml.toString());
+const template = handlebars.compile(sourceHtml.toString())
 
 const server = http.createServer((req, resp) => {
-    const url = req.url;
-    
-    readFile()
-    
-    const realPath = path.join(conf.root, url)
-    fs.stat(realPath, (err, stats) => {
+    const filePath = path.join(conf.root, req.url);
+    router(resp,filePath,template)
 
-    })
-
-
-    resp.statusCode = 200
-    resp.setHeader('Content-Type', 'text/plain')
-    resp.end(realPath)
 })
 
 server.listen(conf.port, conf.host, () => {
